@@ -1,4 +1,20 @@
+#head {
+  background-color: #6bb6ff;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
+}
+
+#inpu {
+  margin: 15px;
+}
+
+body {
+  font-family: 'Courier New', '华文黑体', Courier, monospace;
+  margin: 0;
+}
+
 h1 {
+  padding-left: 17px;
+  padding-top: 5px;
   font-size: 50px;
   line-height: 140px;
   margin: 0 0 0 32.5px;
@@ -13,12 +29,20 @@ img {
 input {
   margin: 15px 0px 15px 15px;
   width: 85%;
-  height: 35px;
+  height: 40px;
+  padding-left: 10px;
+  border-radius: 40px;
+  border-width: 3px;
+  border-color: #bedeff;
+  font-size: 80%;
 }
 
 button {
   width: 10%;
-  height: 41px;
+  height: 53px;
+  border-radius: 30px;
+  background-color: #bedeff;
+  font-size: 110%;
 }
 
 .info {
@@ -44,16 +68,22 @@ h2 {
   display: inline-block;
   margin: 50px 10px;
   width: 30%;
-  border: #bbb 3px solid;
+  border: #bbb 2px solid;
   border-radius: 13px;
   color: black;
   text-decoration: none;
+  /* background-color:rgb(225, 229, 238); */
 }
 
 .reco_content:hover {
-  background: #bbb;
+  background: #e4f2ff;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
 }
 
 p {
   margin: 15px;
+}
+
+.reco {
+  margin-left: 20px;
 }

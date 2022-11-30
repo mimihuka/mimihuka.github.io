@@ -1,31 +1,16 @@
-function b(){
-    let a = document.querySelector("input").value;
-    switch(a){
-        case "耗子尾汁":
-            window.location.href="words/耗子尾汁/index.html";
-            break;
-        case "黑人抬棺":
-            window.location.href="words/黑人抬棺/index.html";
-            break;
-        case "坎油揣":
-            window.location.href="words/坎油揣/index.html";
-            break;
-        case "迷hotel":
-            window.location.href="words/迷hotel/index.html";
-            break;
-        case "闹太套":
-            window.location.href="words/闹太套/index.html";
-            break;
-        case "夏啵":
-            window.location.href="words/夏啵/index.html";
-            break;
-        case "奥利给":
-            window.location.href="words/奥利给/index.html";
-            break;
-        case "":
-            break;
-        default:
-            window.location.href="https://www.baidu.com/s?wd="+a;
+kw = ['奥利给','耗子尾汁','黑人抬棺','迷hotel','闹太套'];
 
+function fuzzyQuery(list, keyWord) {
+    var arr = [];
+    for (var i = 0; i < list.length; i++) {
+      if (list[i].indexOf(keyWord) >= 0) {
+        arr.push(list[i]);
+      }
     }
-}
+    console.log(arr);
+    if(arr.length >= 1){
+        window.location.href="words/"+arr[0]+"/index.html";
+    }else{
+        window.location.href="https://www.baidu.com/s?wd="+keyWord;
+    }
+  }
