@@ -1,4 +1,4 @@
-kw = ['奥利给','耗子尾汁','黑人抬棺','迷hotel','闹太套'];
+kw = ['奥利给','耗子尾汁','黑人抬棺','迷hotel','闹太套','6'];
 
 function fuzzyQuery(list, keyWord) {
     var arr = [];

@@ -5,13 +5,14 @@
 
 body {
   margin: 0;
-  font-family: 'Courier New', '华文黑体','黑体', Courier, monospace;
+  font-family: 'Courier New', '华文黑体', Courier, monospace;
 }
 
 h1 {
   display: inline-block;
   font-size: 400%;
   margin: 0;
+  margin-top: 5px;
   top: 15px;
   position: absolute;
 }
