@@ -1,0 +1,37 @@
+body {
+    background-color: rgb(247, 241, 228);
+}
+
+.copyright {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+div.time {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 80vh;
+    margin: auto;
+}
+
+div.q1 {
+    display: block;
+}
+
+div.q2 {
+    display: block;
+}
+
+#curt {
+    font-size: 60px;
+    font-weight: 500;
+    margin: 20px auto;
+}
+
+.title {
+    margin: 3px auto;
+}
