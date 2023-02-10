@@ -1,11 +1,2 @@
-网络词汇翻译器
-=
-
-关于
--
-这是一款翻译网络词汇的翻译软件，欢迎使用  
-
-作者
--
-smh，lsh
-  
+# popular_words_translator
+a translator dedicated to popular online words.
