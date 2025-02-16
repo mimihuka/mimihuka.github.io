@@ -24,7 +24,7 @@ body {
     margin: 25px;
     margin-top: 25px;
     margin-bottom: 25px;
-    margin-left: 0;
+    /* margin-left: 0; */
     font-size: 200%;
     flex-grow: 1;
 }
