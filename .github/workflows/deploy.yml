@@ -18,19 +18,18 @@ jobs:
         with:
           node-version: 20
           cache: 'yarn'
-          cache-dependency-path: my-maker-blog/yarn.lock   # 🟢 指定 yarn.lock 位置
+          cache-dependency-path: my-maker-blog/yarn.lock
 
       - name: Install dependencies
-        working-directory: my-maker-blog     # 🟢 进入子目录
+        working-directory: my-maker-blog
         run: yarn install --frozen-lockfile
 
       - name: Build Docusaurus
-        working-directory: my-maker-blog     # 🟢 必须在项目目录执行
+        working-directory: my-maker-blog
         run: yarn build
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: my-maker-blog/build   # 🟢 构建输出目录
-          destination_dir: my-maker-blog
+          publish_dir: my-maker-blog/build   
