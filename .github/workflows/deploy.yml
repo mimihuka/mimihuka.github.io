@@ -1,0 +1,36 @@
+name: Build and Deploy Docusaurus Subdirectory with Yarn
+
+on:
+  push:
+    branches:
+      - main   # 按你的主分支修改（可能是 main 或 master）
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: my-maker-blog   # 指定子目录
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: 'yarn'   # 开启 yarn 缓存，加速构建
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Build Docusaurus
+        run: yarn build
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: my-maker-blog/build
+          destination_dir: my-maker-blog
