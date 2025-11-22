@@ -3,14 +3,11 @@ name: Build and Deploy Docusaurus Subdirectory with Yarn
 on:
   push:
     branches:
-      - main   # 按你的主分支修改（可能是 main 或 master）
+      - main
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: my-maker-blog   # 指定子目录
 
     steps:
       - name: Checkout code
@@ -20,17 +17,20 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18
-          cache: 'yarn'   # 开启 yarn 缓存，加速构建
+          cache: 'yarn'
+          cache-dependency-path: my-maker-blog/yarn.lock   # 🟢 指定 yarn.lock 位置
 
       - name: Install dependencies
+        working-directory: my-maker-blog     # 🟢 进入子目录
         run: yarn install --frozen-lockfile
 
       - name: Build Docusaurus
+        working-directory: my-maker-blog     # 🟢 必须在项目目录执行
         run: yarn build
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: my-maker-blog/build
+          publish_dir: my-maker-blog/build   # 🟢 构建输出目录
           destination_dir: my-maker-blog
